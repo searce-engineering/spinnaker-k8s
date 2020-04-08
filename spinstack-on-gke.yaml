@@ -151,7 +151,7 @@ data:
     currentDeployment: default
     deploymentConfigurations:
     - name: default
-      version: 1.17.6
+      version: 1.19.3
       providers:
         appengine:
           enabled: false
@@ -434,7 +434,7 @@ spec:
       containers:
       - name: hal-deploy-apply
         # todo use a custom image
-        image: gcr.io/spinnaker-marketplace/halyard:stable
+        image: gcr.io/spinnaker-marketplace/halyard:1.33.0
         command:
         - /bin/sh
         args:
