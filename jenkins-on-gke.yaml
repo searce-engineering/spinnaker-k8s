@@ -64,7 +64,7 @@ spec:
       serviceAccountName: jenkins
       containers:
         - name: jenkin-master
-          image: jenkins/jenkins:2.204.1
+          image: jenkins/jenkins:2.204.6-jdk11
           ports:
             - name: http-port
               containerPort: 8080
