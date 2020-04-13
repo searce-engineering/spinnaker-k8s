@@ -62,6 +62,10 @@ spec:
         app: jenkins
     spec:
       serviceAccountName: jenkins
+      securityContext:
+        runAsGroup: 1000
+        runAsUser: 1000
+        fsGroup: 1000
       containers:
         - name: jenkin-master
           image: jenkins/jenkins:2.204.6-jdk11
@@ -72,7 +76,7 @@ spec:
               containerPort: 50000
           volumeMounts:
             - name: jenkins-vol
-              mountPath: /var/lib/jenkins_home
+              mountPath: /var/jenkins_home
       initContainers:  
         - name: increase-fd-ulimit
           image: busybox
