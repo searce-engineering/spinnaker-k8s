@@ -69,6 +69,9 @@ spec:
       containers:
         - name: jenkin-master
           image: jenkins/jenkins:2.204.6-jdk11
+          env:
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
           ports:
             - name: http-port
               containerPort: 8080
